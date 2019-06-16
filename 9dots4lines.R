@@ -28,14 +28,26 @@ spheres3d(x,y,z,col="blue",radius=0.04)
 
 #Adición de las "líneas"
 n<-54
-theta <- runif(n,-pi/2,pi/2)
-u <- rep(c(),n)
+theta <- runif(n,pi/2,pi*3/2)
+u <- rep(c(0),n)
 
 x <- sqrt(1-u^2)*cos(theta)
 y <- sqrt(1-u^2)*sin(theta)
 z <- u
 
 spheres3d(x,y,z,col="red",radius=0.02)
+
+
+n<-54
+theta <- seq(pi/2,pi*2,n)
+u <- seq(-1,1,length.out=n)
+
+x <- sqrt(1-u^2)*cos(theta)
+y <- sqrt(1-u^2)*sin(theta)
+z <- u
+
+spheres3d(x,y,z,col="red",radius=0.02)
+spheres3d(-x,-y,z,col="red",radius=0.02)
 
 #Möbius Strip
 #Instalamos los paquetes necesarios
@@ -51,9 +63,6 @@ Mob<-mobius(3,200)
 Mob[[1]]
 
 #Añadimos los 9 puntos del problema
-
-
-
 
 #Resolveremos el problema con 1 línea
 
